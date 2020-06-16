@@ -1,7 +1,7 @@
 const BaseRoute = require('./base/baseRoute')
 const Joi = require('joi')
 const Boom = require('boom')
-const jwt = require('jsonwebtoken')
+const Jwt = require('jsonwebtoken')
 const PasswordHelper = require('./../helpers/passwordHelper')
 
 const failAction = (request, headers, erro) => {
@@ -61,7 +61,7 @@ class AuthRoutes extends BaseRoute {
 
                     return Boom.unauthorized() */
 
-                const token = jwt.sign({
+                const token = Jwt.sign({
                     username: username,
                     id: usuario.id
                 }, this.secret)

@@ -20,3 +20,7 @@ docker exec -it mongodb mongo --host localhost -u admin -p admin --authenticatio
 docker stop $(docker ps -a -q)
 
 https://curso-nodebr-gama.herokuapp.com/ | https://git.heroku.com/curso-nodebr-gama.git
+
+
+obs
+gerei o hash para senha 123
