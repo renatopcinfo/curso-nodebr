@@ -4,11 +4,10 @@
   "description": "docker run --name postgres -e POSTGRES_USER=renato -e POSTGRES_PASSWORD=123. -e POSTGRES_DB=heroes -p 5432:5432 -d postgres",
   "main": "index.js",
   "scripts": {
-    "preinstall": "npm i -g pm2",
     "test": "mocha --timeout 10000 src/tests/*.js",
     "test-w": "mocha src/tests/*.js -w",
     "t-prod": "cross-env NODE_ENV=prod npm t",
-    "start": "cross-env NODE_ENV=prod pm2 start src/api.js"
+    "start": "cross-env NODE_ENV=prod node src/api.js"
   },
   "keywords": [],
   "author": "",
@@ -29,7 +28,6 @@
     "mongoose": "^5.5.12",
     "pg": "^7.11.0",
     "pg-hstore": "^2.3.2",
-    "pm2": "^4.4.0",
     "sequelize": "^5.8.7",
     "vision": "^5.4.4"
   },
