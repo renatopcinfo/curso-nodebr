@@ -7,7 +7,6 @@
   },
   "main": "index.js",
   "scripts": {
-    "postinstall": "cross env NODE_ENV=prod npm t",
     "test": "nyc --reporter=html mocha --timeout 10000 --exit src/tests/*.js",
     "test-w": "mocha src/tests/*.js -w",
     "t-prod": "cross-env NODE_ENV=prod npm t",
