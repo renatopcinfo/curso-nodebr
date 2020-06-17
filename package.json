@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "pm2 install pm2-server-monit",
-    "test": "nyc --reporter=html mocha --timeout 10000 --exit src/tests/*.js",
+    "test": "mocha --timeout 10000 src/tests/*.js",
     "test-w": "mocha src/tests/*.js -w",
     "t-prod": "cross-env NODE_ENV=prod npm t",
     "start": "cross-env NODE_ENV=prod pm2 start src/api.js"
@@ -24,14 +24,11 @@
     "hapi-auth-jwt2": "^8.6.1",
     "hapi-swagger": "^10.0.2",
     "inert": "^5.1.3",
-    "install": "^0.13.0",
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.5.12",
     "pg": "^7.11.0",
     "pg-hstore": "^2.3.2",
-    "pm2": "^4.4.0",
-    "pm2-server-monit": "^3.0.0",
     "sequelize": "^5.8.7",
     "vision": "^5.4.4"
   },
