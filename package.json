@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "pm2 install pm2-server-monit",
-    "test": "mocha --timeout 10000 src/tests/*.js",
+    "test": "nyc --reporter=html mocha --timeout 10000 --exit src/tests/*.js",
     "test-w": "mocha src/tests/*.js -w",
     "t-prod": "cross-env NODE_ENV=prod npm t",
     "start": "cross-env NODE_ENV=prod pm2 start src/api.js"
@@ -33,6 +33,7 @@
     "vision": "^5.4.4"
   },
   "devDependencies": {
-    "mocha": "^6.1.4"
+    "mocha": "^6.1.4",
+    "nyc": "^15.1.0"
   }
 }

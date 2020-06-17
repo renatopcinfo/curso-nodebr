@@ -29,6 +29,8 @@ const Inert = require('inert')
 const HapiJwt = require('hapi-auth-jwt2')
 const JWT_SECRET = process.env.JWT_KEY
 
+const UtilRoutes = require('./routes/utilRoutes')
+
 const app = new Hapi.Server({
     port: process.env.PORT
 })
@@ -88,12 +90,13 @@ async function main() {
 
     })
 
-    app.auth.default('jwt') // por padrao vai usar o noso schema criado 
+    app.auth.default('jwt') // por padrao vai usar o nosso schema criado 
 
     app.route([
 
         ...mapRoutes(new HeroRoute(context), HeroRoute.methods()), //retorna todas rotas CRUD em forma de  array
-        ...mapRoutes(new AuthRoute(JWT_SECRET, contextPostgres), AuthRoute.methods()) //... concatena objetos(rest Spread)
+        ...mapRoutes(new AuthRoute(JWT_SECRET, contextPostgres), AuthRoute.methods()),
+        ...mapRoutes(new UtilRoutes(), UtilRoutes.methods())
     ]
     )
 
