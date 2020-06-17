@@ -4,7 +4,6 @@
   "description": "docker run --name postgres -e POSTGRES_USER=renato -e POSTGRES_PASSWORD=123. -e POSTGRES_DB=heroes -p 5432:5432 -d postgres",
   "main": "index.js",
   "scripts": {
-    "preinstall": "pm2 install pm2-server-monit",
     "test": "nyc --reporter=html mocha --timeout 10000 --exit src/tests/*.js",
     "test-w": "mocha src/tests/*.js -w",
     "t-prod": "cross-env NODE_ENV=prod npm t",
